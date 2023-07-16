@@ -5,6 +5,7 @@
 - [About](#about)
 - [Usage](#usage)
 - [Installation](#installation)
+- [Documentation](#documentation)
 
 ## About <a name = "about"></a>
 
@@ -37,3 +38,7 @@ make
 ## Usage <a name = "usage"></a>
 
 TODO
+
+## Documentation <a name = "documentation">
+
+All the documentation is in the `/doc` folder. See [Here](./doc/README.md) to navigate in the documentation.
