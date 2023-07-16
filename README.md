@@ -20,11 +20,13 @@ These instructions will get you a copy of the project up and running on your loc
 The installation processus is for Centos with dnf, it can changes depending on your OS and package manager.
 
 g++
+
 ```bash
 sudo dnf install g++
 ```
 
 make
+
 ```bash
 sudo dnf install make
 ```
