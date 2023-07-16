@@ -39,7 +39,7 @@ make
 
 ## Usage <a name = "usage"></a>
 
-TODO
+TODO.
 
 ## Documentation <a name = "documentation">
 
