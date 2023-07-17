@@ -19,9 +19,14 @@ public:
     */
     Params(int ac, char **av);
 
+    /**
+     * @brief   Getter for files attributes
+    */
+    std::vector<std::string> files() const;
+
 private:
     // Path of the files to compile
-    std::vector<std::string> files;
+    std::vector<std::string> _files = {};
 };
 
 #endif

@@ -9,8 +9,10 @@
 include ./../../conf.mk
 
 SRC			:= ./Core.cpp \
-			./Params.cpp
+			./Params.cpp \
 			./Compilation/Compilation.cpp \
+			./Compilation/CompilFiles.cpp \
+			./Compilation/CompilFlags.cpp \
 
 OBJ			:= $(SRC:.cpp=.o)
 

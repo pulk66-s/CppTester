@@ -10,6 +10,10 @@
 
 Params::Params(int ac, char **av) {
     for (int i = 1; i < ac; i++) {
-        this->files.push_back(av[i]);
+        this->_files.push_back(av[i]);
     }
+}
+
+std::vector<std::string> Params::files() const {
+    return this->_files;
 }
