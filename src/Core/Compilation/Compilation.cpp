@@ -29,9 +29,20 @@ namespace Compil
         }
     }
 
-    Compilation::Compilation(struct Files files, struct Flags flags)
+    void Compilation::_setupBuiltinFiles(struct Files builtinFiles)
     {
+        this->builtinFiles = builtinFiles.files;
+    }
+
+    Compilation::Compilation(struct Files files, struct Files builtinFiles, struct Flags flags)
+    {
+        this->_setupBuiltinFiles(builtinFiles);
         this->_createFiles(files);
         this->_createFlags(flags);
+    }
+
+    void Compilation::run(void)
+    {
+        this->gpp.run(this->files, this->flags);
     }
 }

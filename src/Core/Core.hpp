@@ -2,6 +2,7 @@
 #define __CORE_HPP__
 
 #include "./Params.hpp"
+#include "./Env.hpp"
 
 /**
  * @brief Core class
@@ -27,6 +28,8 @@ public:
 private:
     // Params of the project
     Params params;
+    // Environment of the project
+    Env env;
 };
 
 #endif

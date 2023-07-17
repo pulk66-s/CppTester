@@ -4,6 +4,7 @@
 #include "CompilationNamespace.hpp"
 #include "CompilFiles.hpp"
 #include "CompilFlags.hpp"
+#include "Gpp.hpp"
 #include <vector>
 #include <string>
 
@@ -12,7 +13,18 @@ namespace Compil
     class Compilation
     {
     public:
-        Compilation(struct Files files, struct Flags flags);
+        /**
+         * @brief   Initialize the compilation process
+         * @param files: files to compile
+         * @param builtinFiles: files given by the software
+         * @param flags: flags to compile
+        */
+        Compilation(struct Files files, struct Files builtinFiles, struct Flags flags);
+
+        /**
+         * @brief   Run the compilation
+        */
+        void run(void);
 
     private:
         /**
@@ -25,7 +37,13 @@ namespace Compil
          * @brief   Setup all the flags needed for the compilation
          * @param flags: Struct that describes all the compilation flags
         */
-       void _createFlags(struct Flags flags);
+        void _createFlags(struct Flags flags);
+
+       /**
+        * @brief    Setup of the builtin files
+        * @param builtinFiles: All the builtin files, not the user one
+       */
+       void _setupBuiltinFiles(struct Files builtinFiles);
 
         // All files needs to be compiled
         std::vector<std::string> files = {};
@@ -33,6 +51,9 @@ namespace Compil
         std::vector<std::string> builtinFiles = {};
         // All the flags
         std::vector<std::string> flags = {};
+
+        // Compilation system
+        Gpp gpp;
     };
 }
 

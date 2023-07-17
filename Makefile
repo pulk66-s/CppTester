@@ -21,7 +21,7 @@ all: build
 # It launchs all the submakefiles that generates all .o
 build: _build_message $(OBJ) submakefiles
 	@echo "$(COLOR_YELLOW)Compiling every objects.$(NO_COLOR)"
-	$(eval ALL_OBJ := $(shell find . -type f -name '*.o'))
+	$(eval ALL_OBJ := $(shell find ./src -type f -name '*.o'))
 	$(CC) $(CFLAGS) $(ALL_OBJ) -o $(NAME)
 	@echo "$(COLOR_GREEN)Project built.$(NO_COLOR)"
 

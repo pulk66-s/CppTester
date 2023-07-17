@@ -3,8 +3,10 @@
 
 namespace Compil {
     class Compilation;
+    class Gpp;
     struct Files;
     struct Flags;
+    struct BuiltinFiles;
 }
 
 #endif

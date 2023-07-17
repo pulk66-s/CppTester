@@ -12,4 +12,8 @@ namespace Compil {
     Files::Files(Params params) {
         this->files = params.files();
     }
+
+    Files::Files() {
+        this->files = {};
+    }
 }

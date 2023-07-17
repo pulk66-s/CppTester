@@ -11,8 +11,15 @@ namespace Compil
     public:
         /**
          * @brief   Get all the files from the params
+         * @param params: Program parameters
          */
         Files(Params params);
+
+        /**
+         * @brief   Get all the files from the params
+         * @param params: Program parameters
+         */
+        Files();
 
         // Compilation files
         std::vector<std::string> files = {};

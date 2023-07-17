@@ -5,3 +5,30 @@
 ## Makefile for functions return value tests
 ##
 
+CC			= g++
+SRC			= ./main.cpp \
+			./int.cpp
+OBJ			= $(SRC:.cpp=.o)
+NAME		= bin
+CFLAGS		= -W -Wall -Wextra
+
+TESTSER		= ./../../../CppTester
+TESTS_SRC	= $(SRC) \
+			./tests/testInt.cpp
+
+all: $(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+
+clean:
+	$(RM) $(OBJ)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+run_tests:
+	$(TESTSER) $(TESTS_SRC) --sources /home/me-an-intellectual/Perso/CppTester
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
