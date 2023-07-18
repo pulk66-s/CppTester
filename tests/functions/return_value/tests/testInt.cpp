@@ -9,7 +9,7 @@ Test(test_int, basic) {
 
 Test(test_int, should_crash) {
     try {
-        expect(add(3, 4)).to.be.equal(7);
+        expect(add(3, 4)).to.be.equal(8);
     } catch (std::exception &err) {
         return;
     }

@@ -1,4 +1,5 @@
 #include "Compilation.hpp"
+#include <iostream>
 
 namespace Compil
 {
@@ -60,5 +61,11 @@ namespace Compil
     void Compilation::runprgm(void)
     {
         system("./cpptester");
+    }
+
+    Compilation::~Compilation() {
+        std::cout << "~Compilation" << std::endl;
+
+        system("rm -f ./cpptester");
     }
 }

@@ -28,6 +28,12 @@ namespace Compil
         );
 
         /**
+         * @brief   Destructor of the Compilation
+         * It clean all the created ressources
+        */
+        ~Compilation();
+
+        /**
          * @brief   Run the compilation
         */
         void run(void);
