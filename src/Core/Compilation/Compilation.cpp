@@ -64,8 +64,6 @@ namespace Compil
     }
 
     Compilation::~Compilation() {
-        std::cout << "~Compilation" << std::endl;
-
         system("rm -f ./cpptester");
     }
 }

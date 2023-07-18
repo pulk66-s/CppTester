@@ -33,8 +33,13 @@ sudo dnf install make
 
 ## Installation <a name="installation"></a>
 
+### Centos
+
+Installation in Centos
+
+You need to have sudo rights
 ```bash
-make
+./scripts/install/centos.sh
 ```
 
 ## Usage <a name = "usage"></a>

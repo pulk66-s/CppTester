@@ -30,7 +30,6 @@ namespace Compil
     {
         std::string command = this->_formatCommand(files, flags);
 
-        std::cout << "command " << command << std::endl;
         system(command.c_str());
     }
 }
