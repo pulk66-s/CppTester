@@ -15,7 +15,8 @@ SRC			:= ./Core.cpp \
 			./Compilation/CompilFlags.cpp \
 			./Compilation/BuiltinFiles.cpp \
 			./Compilation/Gpp.cpp \
-			./Env.cpp
+			./Env.cpp \
+			./CoreDatas.cpp
 
 OBJ			:= $(SRC:.cpp=.o)
 

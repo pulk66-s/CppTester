@@ -4,26 +4,34 @@
 #include "./AssertNamespace.hpp"
 #include "./To.hpp"
 
+/**
+ * @brief   Entry of the expect function
+ * @param value: The value that need to be tested
+ * @return: Expect object
+ */
+template <typename T>
+struct Tests::Assert::Expect<T> expect(T value)
+{
+    struct Tests::Assert::Expect<T> res(value);
 
-namespace Tests::Assert {
-    /**
-     * @brief   Entry of the expect function
-     * @param value: The value that need to be tested
-     * @return: Expect object
-    */
-    struct Expect expect(void *value);
+    return res;
+}
 
+namespace Tests::Assert
+{
     /**
      * @brief   Expect object
      * Object that test the value
-    */
-    struct Expect {
+     */
+    template <typename T>
+    struct Expect
+    {
     public:
-        Expect(void *value);
-        struct To to;
+        Expect(T value) : to(value), value(value){};
+        struct To<T> to;
 
     private:
-        void *value = nullptr;
+        T value = nullptr;
     };
 }
 

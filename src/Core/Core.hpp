@@ -3,6 +3,7 @@
 
 #include "./Params.hpp"
 #include "./Env.hpp"
+#include "./CoreDatas.hpp"
 
 /**
  * @brief Core class
@@ -25,11 +26,14 @@ public:
     */
     ~Core();
 
+    /**
+     * @brief   Get the path of the include folder
+     * @return: the path of the include folder
+    */
+    static std::string getIncludePath();
+
 private:
-    // Params of the project
-    Params params;
-    // Environment of the project
-    Env env;
+    struct coreData datas;
 };
 
 #endif

@@ -5,6 +5,7 @@
 #include "CompilFiles.hpp"
 #include "CompilFlags.hpp"
 #include "Gpp.hpp"
+#include "./../CoreDatas.hpp"
 #include <vector>
 #include <string>
 
@@ -19,12 +20,22 @@ namespace Compil
          * @param builtinFiles: files given by the software
          * @param flags: flags to compile
         */
-        Compilation(struct Files files, struct Files builtinFiles, struct Flags flags);
+        Compilation(
+            struct Files files,
+            struct Files builtinFiles, 
+            struct Flags flags, 
+            struct coreData datas
+        );
 
         /**
          * @brief   Run the compilation
         */
         void run(void);
+
+        /**
+         * @brief   Run the compiled prgm
+        */
+        void runprgm(void);
 
     private:
         /**
@@ -54,6 +65,9 @@ namespace Compil
 
         // Compilation system
         Gpp gpp;
+
+        // Core datas
+        struct coreData coreDatas;
     };
 }
 

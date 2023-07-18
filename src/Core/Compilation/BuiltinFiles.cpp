@@ -1,21 +1,12 @@
 #include "./BuiltinFiles.hpp"
 
 namespace Compil {
-    BuiltinFiles::BuiltinFiles(struct Env env, struct Params params) {
-        std::string prefix = "";
-
-        if (env.sourcesPath) {
-            prefix = *env.sourcesPath;
-        } else if (params.getParams().sourceDir) {
-            prefix = *params.getParams().sourceDir;
-        } else {
-            prefix = ".";
-        }
+    BuiltinFiles::BuiltinFiles(struct coreData datas) {
+        std::string prefix = datas.getSourcesPath();
 
         this->files = {
-            prefix + "/src/Tests/Assert/Be.cpp",
-            prefix + "/src/Tests/Assert/To.cpp",
-            prefix + "/src/Tests/Assert/Expect.cpp"
+            prefix + "/src/Tests/TestSuite.cpp",
+            prefix + "/src/Tests/TestMain.cpp"
         };
     }
 }

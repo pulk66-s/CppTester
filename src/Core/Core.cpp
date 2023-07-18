@@ -13,14 +13,15 @@
 #include "./Errors/EnvError.hpp"
 #include <iostream>
 
-Core::Core(int ac, char **av) : params(ac, av)
+Core::Core(int ac, char **av) : datas(ac, av)
 {
-    struct Compil::Files files(this->params);
-    struct Compil::BuiltinFiles builtinFiles(this->env, this->params);
+    struct Compil::Files files(this->datas.params);
+    struct Compil::BuiltinFiles builtinFiles(this->datas);
     struct Compil::Flags flags;
-    Compil::Compilation compilation(files, builtinFiles, flags);
+    Compil::Compilation compilation(files, builtinFiles, flags, this->datas);
 
     compilation.run();
+    compilation.runprgm();
 }
 
 Core::~Core()

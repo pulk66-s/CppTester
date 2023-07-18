@@ -6,8 +6,7 @@
 ##
 
 CC			= g++
-SRC			= ./main.cpp \
-			./int.cpp
+SRC			= ./int.cpp
 OBJ			= $(SRC:.cpp=.o)
 NAME		= bin
 CFLAGS		= -W -Wall -Wextra

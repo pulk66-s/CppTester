@@ -27,6 +27,13 @@ namespace Compil
         if (flags.warnError) {
             this->flags.push_back("-Werror");
         }
+        if (flags.defaultInclude) {
+            this->flags.push_back("-I" + this->coreDatas.getIncludePath());
+        }
+        if (flags.defaultName) {
+            this->flags.push_back("-o");
+            this->flags.push_back("cpptester");
+        }
     }
 
     void Compilation::_setupBuiltinFiles(struct Files builtinFiles)
@@ -34,8 +41,12 @@ namespace Compil
         this->builtinFiles = builtinFiles.files;
     }
 
-    Compilation::Compilation(struct Files files, struct Files builtinFiles, struct Flags flags)
-    {
+    Compilation::Compilation(
+        struct Files files,
+        struct Files builtinFiles, 
+        struct Flags flags, 
+        struct coreData datas
+    ) : coreDatas(datas) {
         this->_setupBuiltinFiles(builtinFiles);
         this->_createFiles(files);
         this->_createFlags(flags);
@@ -44,5 +55,10 @@ namespace Compil
     void Compilation::run(void)
     {
         this->gpp.run(this->files, this->flags);
+    }
+
+    void Compilation::runprgm(void)
+    {
+        system("./cpptester");
     }
 }

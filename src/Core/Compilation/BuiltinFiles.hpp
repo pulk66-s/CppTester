@@ -3,12 +3,11 @@
 
 #include "./CompilationNamespace.hpp"
 #include "./CompilFiles.hpp"
-#include "./../Env.hpp"
-#include "./../Params.hpp"
+#include "./../CoreDatas.hpp"
 
 namespace Compil {
     struct BuiltinFiles : public Files {
-        BuiltinFiles(struct Env env, struct Params params);
+        BuiltinFiles(struct coreData datas);
     };
 }
 

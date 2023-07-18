@@ -11,6 +11,8 @@ namespace Compil
         bool optimisation = false;  // Optimisation flags
         bool warns = true;          // Warning flags
         bool warnError = false;     // Warn Error flag (-Werror)
+        bool defaultInclude = true; // Default include folder path
+        bool defaultName = true;    // Default binary name
     };
 }
 

@@ -6,14 +6,23 @@
 
 namespace Tests::Assert
 {
+    template <typename T>
     struct To
     {
     public:
-        To(void *value);
-        struct Be be;
+        /**
+         * @brief   Constructor
+         * @param value: Value to test
+        */
+        To(T value) : be(value), value(value){};
+
+        /**
+         * @brief   value tester, it contains every function to check the value
+        */
+        struct Be<T> be;
 
     private:
-        void *value = nullptr;
+        T value = nullptr;
     };
 }
 
