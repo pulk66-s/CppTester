@@ -5,8 +5,8 @@ namespace Compil {
         std::string prefix = datas.getSourcesPath();
 
         this->files = {
-            prefix + "/src/Tests/TestSuite.cpp",
-            prefix + "/src/Tests/TestMain.cpp"
+            prefix + "/Tests/TestSuite.cpp",
+            prefix + "/Tests/TestMain.cpp"
         };
     }
 }

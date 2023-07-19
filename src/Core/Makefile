@@ -19,6 +19,7 @@ SRC			:= ./Core.cpp \
 			./CoreDatas.cpp
 
 OBJ			:= $(SRC:.cpp=.o)
+CFLAGS		+= -I./../../includes/
 
 # Crash the compilation if no target is specified
 all:

@@ -11,7 +11,7 @@ OBJ			= $(SRC:.cpp=.o)
 NAME		= bin
 CFLAGS		= -W -Wall -Wextra
 
-TESTSER		= ./../../../CppTester
+TESTSER		= CppTester
 TESTS_SRC	= $(SRC) \
 			./tests/testInt.cpp
 
@@ -27,7 +27,7 @@ fclean: clean
 re: fclean all
 
 run_tests:
-	$(TESTSER) $(TESTS_SRC) --sources /home/me-an-intellectual/Perso/CppTester
+	$(TESTSER) $(TESTS_SRC)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

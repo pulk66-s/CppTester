@@ -1,6 +1,6 @@
 #include "./../int.hpp"
-#include <Tests.hpp>
-#include <Assert.hpp>
+#include <CppTester/Tests.hpp>
+#include <CppTester/Assert.hpp>
 #include <iostream>
 
 Test(test_int, basic) {

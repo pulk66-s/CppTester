@@ -1,4 +1,4 @@
-#include "./TestSuite.hpp"
+#include "Tests/TestSuite.hpp"
 #include <iostream>
 
 int main()

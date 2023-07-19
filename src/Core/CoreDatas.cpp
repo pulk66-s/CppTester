@@ -9,9 +9,9 @@ std::string coreData::getIncludePath()
     } else if (params.getParams().sourceDir) {
         prefix = *params.getParams().sourceDir;
     } else {
-        prefix = ".";
+        prefix = "/usr/include/CppTester";
     }
-    return prefix + "/includes";
+    return prefix;
 }
 
 std::string coreData::getSourcesPath()
@@ -23,7 +23,7 @@ std::string coreData::getSourcesPath()
     } else if (params.getParams().sourceDir) {
         prefix = *params.getParams().sourceDir;
     } else {
-        prefix = ".";
+        prefix = "/lib/CppTester";
     }
     return prefix;
 }
