@@ -3,6 +3,7 @@
 
 #include "./AssertNamespace.hpp"
 #include "./../Errors/AssertError.hpp"
+#include "./operator/string.hpp"
 
 namespace Tests::Assert
 {

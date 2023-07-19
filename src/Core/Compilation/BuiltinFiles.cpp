@@ -6,7 +6,8 @@ namespace Compil {
 
         this->files = {
             prefix + "/Tests/TestSuite.cpp",
-            prefix + "/Tests/TestMain.cpp"
+            prefix + "/Tests/TestMain.cpp",
+            prefix + "/Tests/operator/string.cpp",
         };
     }
 }
