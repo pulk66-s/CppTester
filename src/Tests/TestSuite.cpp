@@ -1,4 +1,5 @@
 #include "Tests/TestSuite.hpp"
+#include "Tests/Logger/Logger.hpp"
 #include <iostream>
 
 namespace Tests
@@ -36,8 +37,12 @@ namespace Tests
 
     void TestSuite::run()
     {
+        Log::Logger logger;
+
         for (std::pair<std::string, TestSuite> suite : TestSuite::testsSuites) {
+            logger.title("Running:" + suite.first);
             for (auto test : suite.second.list()) {
+                logger.subtitle(test.first);
                 test.second();
             }
         }
