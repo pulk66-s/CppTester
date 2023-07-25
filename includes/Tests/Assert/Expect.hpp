@@ -2,6 +2,7 @@
 #define __TESTS_ASSERT_ASSERT_HPP__
 
 #include "./AssertNamespace.hpp"
+#include "../Binary/Binary.hpp"
 #include "./To.hpp"
 
 /**
@@ -15,6 +16,17 @@ struct Tests::Assert::Expect<T> expect(T value)
     struct Tests::Assert::Expect<T> res(value);
 
     return res;
+}
+
+/**
+ * @brief   Entry of the expect function
+ * @param binary: The binary that need to be tested
+ * @return: Expect object
+ *
+ */
+struct Binary::Expect expectBin(std::shared_ptr<Binary::Bin> binary)
+{
+    return binary->expect();
 }
 
 namespace Tests::Assert

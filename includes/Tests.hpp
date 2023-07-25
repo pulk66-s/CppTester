@@ -3,5 +3,6 @@
 
 #include "./Tests/TestSuite.hpp"
 #include "./Tests/TestsMacro.hpp"
+#include "./Tests/Binary/Binary.hpp"
 
 #endif

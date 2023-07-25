@@ -8,7 +8,8 @@ namespace Compil {
             prefix + "/Tests/TestSuite.cpp",
             prefix + "/Tests/TestMain.cpp",
             prefix + "/Tests/operator/string.cpp",
-            prefix + "/Tests/Logger/Logger.cpp"
+            prefix + "/Tests/Logger/Logger.cpp",
+            prefix + "/Tests/Binary/Binary.cpp"
         };
     }
 }

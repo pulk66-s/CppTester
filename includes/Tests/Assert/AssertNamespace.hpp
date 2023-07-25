@@ -10,6 +10,9 @@ namespace Tests::Assert {
 
     template <typename T>
     struct Be;
+
+    template <typename T>
+    struct Bin;
 };
 
 #endif
