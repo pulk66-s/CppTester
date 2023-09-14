@@ -1,6 +1,7 @@
 #include "Tests/TestSuite.hpp"
 #include "Tests/Logger/Logger.hpp"
 #include "Tests/Binary/Binary.hpp"
+#include "Tests/Errors/AError.hpp"
 #include <iostream>
 
 namespace Tests
@@ -58,24 +59,47 @@ namespace Tests
         this->testList[group + name] = fn;
     }
 
-    void TestSuite::run()
+    int TestSuite::run()
     {
         Log::Logger logger;
+        size_t totalFails = 0;
 
         for (std::pair<std::string, TestSuite> suite : TestSuite::testsSuites) {
             logger.title("Running:" + suite.first);
+            size_t nbTests = 0, testsFailed = 0, testsSucceed = 0;
             for (auto test : suite.second.list()) {
                 logger.subtitle(test.first);
-                test.second();
+                try {
+                    test.second();
+                    testsSucceed++;
+                } catch (std::exception &e) {
+                    logger.error(e.what());
+                    testsFailed++;
+                }
+                nbTests++;
             }
             for (auto test : suite.second.binaryList()) {
                 logger.subtitle(test.first);
 
                 std::shared_ptr<Binary::Bin> bin = Binary::Bin::getBinaryFromTest(test.first);
 
-                test.second(bin);
+                try {
+                    test.second(bin);
+                    testsSucceed++;
+                } catch (std::exception &err) {
+                    logger.error(err.what());
+                    testsFailed++;
+                }
+                nbTests++;
             }
+            if (testsFailed > 0) {
+                logger.error(std::to_string(testsSucceed) + "/" + std::to_string(nbTests) + " tests succeed");
+            } else {
+                logger.success(std::to_string(testsSucceed) + "/" + std::to_string(nbTests) + " tests succeed");
+            }
+            totalFails += testsFailed;
         }
+        return totalFails;
     }
 
     std::unordered_map<std::string, std::function<void()>> TestSuite::list()

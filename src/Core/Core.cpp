@@ -21,7 +21,12 @@ Core::Core(int ac, char **av) : datas(ac, av)
     Compil::Compilation compilation(files, builtinFiles, flags, this->datas);
 
     compilation.run();
-    compilation.runprgm();
+    int res = compilation.runprgm();
+
+    if (res != 0) {
+        std::cout << "Compilation failed " << res << " tests failed";
+    }
+    this->nbFailure = res;
 }
 
 Core::~Core()

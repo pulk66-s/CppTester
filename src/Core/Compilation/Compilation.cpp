@@ -13,9 +13,9 @@ namespace Compil
 
     void Compilation::_createFlags(struct Flags flags)
     {
-        if (flags.debug) {
+        if (flags.debug || this->coreDatas.params.getParams().debug) {
             this->flags.push_back("-g3");
-            this->flags.push_back("-fsanitize=adress");
+            this->flags.push_back("-fsanitize=address");
         }
         if (flags.optimisation) {
             this->flags.push_back("-03");
@@ -34,6 +34,15 @@ namespace Compil
         if (flags.defaultName) {
             this->flags.push_back("-o");
             this->flags.push_back("cpptester");
+        }
+        for (std::string path : this->coreDatas.params.getParams().includes) {
+            this->flags.push_back("-I" + path);
+        }
+        for (std::string lib : this->coreDatas.params.getParams().libs) {
+            this->flags.push_back("-l" + lib);
+        }
+        for (std::string p : this->flags) {
+            std::cout << p << std::endl;
         }
     }
 
@@ -55,12 +64,17 @@ namespace Compil
 
     void Compilation::run(void)
     {
+        std::cout << "Starting GPP" << std::endl;
         this->gpp.run(this->files, this->flags);
+        std::cout << "Ending GPP" << std::endl;
     }
 
-    void Compilation::runprgm(void)
+    int Compilation::runprgm(void)
     {
-        system("./cpptester");
+        std::cout << "Starting Run" << std::endl;
+        int res = system("./cpptester");
+        std::cout << "Ending Run " << res << std::endl;
+        return res;
     }
 
     Compilation::~Compilation() {

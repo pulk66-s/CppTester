@@ -41,7 +41,7 @@ namespace Compil
         /**
          * @brief   Run the compiled prgm
         */
-        void runprgm(void);
+        int runprgm(void);
 
     private:
         /**

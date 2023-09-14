@@ -13,5 +13,5 @@ int main(int ac, char **av)
 {
     Core core(ac, av);
 
-    return 0;
+    return core.getNbFailure();
 }

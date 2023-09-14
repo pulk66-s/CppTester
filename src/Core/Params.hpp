@@ -33,6 +33,9 @@ public:
     struct _params
     {
         std::optional<std::string> sourceDir = {};
+        std::vector<std::string> includes = {};
+        std::vector<std::string> libs = {};
+        bool debug = false;
     };
 
     /**
@@ -48,7 +51,7 @@ private:
      * @param ac: total number of arguments
      * @param av: all arguments
      */
-    void _matchKeyword(std::string keyword, int i, int ac, char **av);
+    void _matchKeyword(std::string keyword, int *i, int ac, char **av);
 
     /**
      * @brief   Function that init the existing params
@@ -60,7 +63,7 @@ private:
     // Params description
     struct _params params;
     // List of existing params
-    std::unordered_map<std::string, std::function<void(int i, int ac, char **av)>> possibleParams = {};
+    std::unordered_map<std::string, std::function<void(int *i, int ac, char **av)>> possibleParams = {};
 };
 
 #endif

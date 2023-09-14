@@ -114,6 +114,18 @@ namespace Tests::Assert
             this->lte(value);
         }
 
+        /**
+         * @brief   Test if the value is null or not
+         * @param value: Value to test
+         * @throw AssertError when value are not equals
+        */
+        void null(T value) {
+            if (value == nullptr) {
+                return;
+            }
+            throw AssertError("value is not null", __FILE__);
+        }
+
     private:
         // value to be tested
         T value;

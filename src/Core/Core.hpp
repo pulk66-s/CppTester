@@ -32,8 +32,15 @@ public:
     */
     static std::string getIncludePath();
 
+    /**
+     * @brief   Get the nb of failure
+     * @return: the nb of failure
+    */
+    int getNbFailure() { return this->nbFailure; };
+
 private:
     struct coreData datas;
+    int nbFailure = 0;
 };
 
 #endif

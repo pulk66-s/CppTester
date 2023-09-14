@@ -78,7 +78,7 @@ namespace Tests
         /**
          * @brief   Run all the test of all suites
         */
-        static void run();
+        static int run();
 
         /**
          * @brief   Getter for testsLists
