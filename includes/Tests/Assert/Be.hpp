@@ -116,11 +116,10 @@ namespace Tests::Assert
 
         /**
          * @brief   Test if the value is null or not
-         * @param value: Value to test
          * @throw AssertError when value are not equals
         */
-        void null(T value) {
-            if (value == nullptr) {
+        void null() {
+            if (this->value == nullptr) {
                 return;
             }
             throw AssertError("value is not null", __FILE__);
