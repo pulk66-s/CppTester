@@ -24,10 +24,7 @@ struct Tests::Assert::Expect<T> expect(T value)
  * @return: Expect object
  *
  */
-struct Binary::Expect expectBin(std::shared_ptr<Binary::Bin> binary)
-{
-    return binary->expect();
-}
+struct Binary::Expect expectBin(std::shared_ptr<Binary::Bin> binary);
 
 namespace Tests::Assert
 {
