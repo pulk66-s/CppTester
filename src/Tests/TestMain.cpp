@@ -12,5 +12,6 @@ int main()
         return 84;
     }
 
+    std::cout << nbFails << " tests failed" << std::endl;
     return nbFails;
 }

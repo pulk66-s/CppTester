@@ -1,5 +1,6 @@
 #include "Compilation.hpp"
 #include <iostream>
+#include <cstdlib>
 
 namespace Compil
 {
@@ -72,9 +73,9 @@ namespace Compil
     int Compilation::runprgm(void)
     {
         std::cout << "Starting Run" << std::endl;
-        int res = system("./cpptester");
+        int res = std::system("./cpptester");
         std::cout << "Ending Run " << res << std::endl;
-        return res;
+        return res / 256; // Why 256 ? It's perl's system fault
     }
 
     Compilation::~Compilation() {

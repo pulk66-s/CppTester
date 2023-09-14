@@ -24,7 +24,7 @@ Core::Core(int ac, char **av) : datas(ac, av)
     int res = compilation.runprgm();
 
     if (res != 0) {
-        std::cout << "Compilation failed " << res << " tests failed";
+        std::cout << "Compilation failed " << res << " tests failed" << std::endl;;
     }
     this->nbFailure = res;
 }
